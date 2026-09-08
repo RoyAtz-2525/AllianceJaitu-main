@@ -6,6 +6,7 @@ import FacilitiesPreview from "../../components/home/FacilitiesPreview";
 import GalleryPreview from "../../components/home/GalleryPreview";
 import Academics from "../../components/home/Academics";
 import UpcomingEvents from "../../components/home/UpcomingEvents";
+import FAQ from "../../components/home/FAQ";
 import AdmissionCTA from "../../components/home/AdmissionCTA";
 import SEO from "../../components/common/SEO";
 import { seoConfig } from "../../components/common/seoConfig";
@@ -75,6 +76,8 @@ const Home = () => {
       <GalleryPreview />
 
       <UpcomingEvents />
+
+      <FAQ />
 
       <AdmissionCTA />
     </>
