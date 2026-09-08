@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import logoNav from "../../assets/logo/logo-nav.png";
+import logoNav from "../../assets/logo/ais_logo.png";
 import {
   LayoutDashboard,
   FileText,

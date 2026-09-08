@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { Menu, User, Bell, Loader2 } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import logoNav from "../../assets/logo/logo-nav.png";
+import logoNav from "../../assets/logo/ais_logo.png";
 import apiClient from "../../api/apiClient";
 
 const AdminNavbar = ({ setIsSidebarOpen }) => {
