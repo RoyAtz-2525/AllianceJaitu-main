@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Fallback to localhost if environment variable is not defined
-const API_BASE_URL = "https://alliance-main.onrender.com/api";
+const API_BASE_URL = "https://alliancejaitu-main.onrender.com/api";
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
