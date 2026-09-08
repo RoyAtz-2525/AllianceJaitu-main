@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import AppRoutes from "./routes/AppRoutes";
 import apiClient from "./api/apiClient";
+import InitialLoader from "./components/common/InitialLoader";
 
 const App = () => {
   // Minimal backend connection test to verify API communication
@@ -20,6 +21,7 @@ const App = () => {
 
   return (
     <>
+      <InitialLoader />
       <AppRoutes />
     </>
   );

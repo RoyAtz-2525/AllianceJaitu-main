@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import { LockKeyhole, Mail, Eye, EyeOff, Loader2 } from "lucide-react";
+import { Mail, Eye, EyeOff, Loader2 } from "lucide-react";
 import useAuth from "../../hooks/useAuth";
 import apiClient from "../../api/apiClient";
 import SEO from "../../components/common/SEO";
+import aisLogo from "../../assets/logo/ais_logo.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -68,26 +69,30 @@ const Login = () => {
       <div className="flex min-h-screen items-center justify-center bg-slate-950 px-4 py-10">
         <div className="w-full max-w-md rounded-3xl bg-white p-6 shadow-2xl sm:p-10">
           <div className="text-center">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-white">
-              <LockKeyhole size={26} />
+            <div className="mx-auto flex h-20 items-center justify-center">
+              <img
+                src={aisLogo}
+                alt="Alliance School Logo"
+                className="h-full w-auto object-contain"
+              />
             </div>
 
-            <h1 className="mt-5 text-3xl font-bold text-slate-900">
+            <h1 className="mt-3 text-3xl font-bold text-slate-900">
               Admin Login
             </h1>
 
-            <p className="mt-2 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-slate-500">
               Sign in to Alliance School administration panel.
             </p>
           </div>
 
           {error && (
-            <div className="mt-6 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600">
+            <div className="mt-4 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600">
               {error}
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+          <form onSubmit={handleSubmit} className="mt-6 space-y-4">
             <div>
               <label
                 htmlFor="email"
@@ -109,7 +114,7 @@ const Login = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="admin@allianceschool.com"
+                  placeholder="Enter Email Address"
                   className="w-full rounded-xl border border-slate-300 py-3 pl-11 pr-4 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                 />
               </div>

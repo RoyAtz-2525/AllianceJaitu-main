@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
-import logoNav from "../../assets/logo/logo-nav.png";
+import logoNav from "../../assets/logo/ais_logo.png";
 
 const quickLinks = [
   { name: "Home", path: "/" },
