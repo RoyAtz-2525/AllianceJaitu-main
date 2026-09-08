@@ -5,10 +5,10 @@ const GoogleMap = () => {
     "Alliance International School, Opp. Hanuman Mandir, Gaushala Road, Jaitu, Faridkot, Punjab 151202";
 
   const googleMapsUrl =
-    "https://www.google.com/maps/search/?api=1&query=Alliance+International+School,+Gaushala+Road,+Near+Hanuman+Mandir,+Jaitu,+Punjab+151202";
+    "https://www.google.com/maps/search/?api=1&query=Alliance+International+School,+Jaitu,+Punjab";
 
   const mapEmbedUrl =
-    "https://www.google.com/maps?q=Alliance+International+School,+Gaushala+Road,+Near+Hanuman+Mandir,+Jaitu,+Faridkot,+Punjab+151202&output=embed";
+    "https://www.google.com/maps?q=Alliance+International+School,+Jaitu,+Punjab&output=embed";
 
   return (
     <section className="bg-white py-16 sm:py-20">
@@ -25,15 +25,26 @@ const GoogleMap = () => {
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
-            Find us at Gaushala Road, Jaitu. Use Google Maps to plan your
-            route and visit our school with ease.
+            Find us at Gaushala Road, Jaitu. Use Google Maps to plan your route
+            and visit our school with ease.
           </p>
         </div>
 
         {/* Map card */}
         <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(40,89,184,0.12)]">
           {/* Map */}
-          <div className="relative h-[360px] w-full sm:h-[430px] lg:h-[500px]">
+          <div className="group relative h-[360px] w-full overflow-hidden sm:h-[430px] lg:h-[500px]">
+            {/* Clickable Overlay */}
+            <a
+              href={googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 z-10 block cursor-pointer transition-colors duration-300 hover:bg-black/5"
+              aria-label="Open Alliance International School in Google Maps"
+            >
+              <span className="sr-only">Open in Google Maps</span>
+            </a>
+
             <iframe
               title="Alliance International School Location"
               src={mapEmbedUrl}
@@ -42,7 +53,7 @@ const GoogleMap = () => {
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              className="border-0"
+              className="pointer-events-none border-0"
             />
 
             {/* Floating school location card */}
@@ -86,9 +97,7 @@ const GoogleMap = () => {
               className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#2859B8] px-5 py-3 text-sm font-bold text-white shadow-md shadow-[#2859B8]/20 transition duration-300 hover:-translate-y-0.5 hover:bg-[#214da3] hover:shadow-lg"
             >
               <Navigation size={17} />
-
               Get Directions
-
               <ExternalLink
                 size={15}
                 className="transition-transform duration-300 group-hover:translate-x-0.5"

@@ -243,14 +243,15 @@ const AdmissionForm = ({ isPopup = false, onClose }) => {
                   className={`w-full rounded-lg border border-slate-300 bg-white outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100 ${isPopup ? "mt-1 px-2.5 py-1.5 text-xs" : "mt-2 px-4 py-3"}`}
                 >
                   <option value="">Select class</option>
-                  <option value="1">Class 1</option>
-                  <option value="2">Class 2</option>
-                  <option value="3">Class 3</option>
-                  <option value="4">Class 4</option>
-                  <option value="5">Class 5</option>
-                  <option value="6">Class 6</option>
-                  <option value="7">Class 7</option>
-                  <option value="8">Class 8</option>
+                  <option value="Pre-Nursery">Pre-Nursery</option>
+                  <option value="Class 1">Class 1</option>
+                  <option value="Class 2">Class 2</option>
+                  <option value="Class 3">Class 3</option>
+                  <option value="Class 4">Class 4</option>
+                  <option value="Class 5">Class 5</option>
+                  <option value="Class 6">Class 6</option>
+                  <option value="Class 7">Class 7</option>
+                  <option value="Class 8">Class 8</option>
                 </select>
               </div>
             </div>

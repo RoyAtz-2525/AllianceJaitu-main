@@ -24,7 +24,7 @@ const Contact = () => {
       <SEO
         title="Contact Alliance International School Jaitu | Get in Touch"
         description="Get in touch with Alliance International School in Jaitu, Faridkot, Punjab. Find our address, phone number, email, school timings, and contact information."
-        canonical="https://alliance-jaitu-eight.vercel.app/contact"
+        canonical="https://www.aisjaito.com/contact"
       />
       <main className="overflow-hidden bg-[#f7faff] text-[#092451]">
         {/* =========================================================

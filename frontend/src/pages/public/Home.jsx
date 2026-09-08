@@ -17,8 +17,9 @@ const Home = () => {
     "@graph": [
       {
         "@type": "School",
-        "@id": "https://alliance-jaitu-eight.vercel.app/#organization",
+        "@id": "https://www.aisjaito.com/#organization",
         name: seoConfig.schoolName,
+        alternateName: "Alliance International School Jaito",
         url: seoConfig.websiteUrl,
         telephone: seoConfig.phone,
         email: seoConfig.email,
@@ -37,12 +38,12 @@ const Home = () => {
       },
       {
         "@type": "WebSite",
-        "@id": "https://alliance-jaitu-eight.vercel.app/#website",
+        "@id": "https://www.aisjaito.com/#website",
         url: seoConfig.websiteUrl,
         name: seoConfig.schoolName,
         description: seoConfig.tagline,
         publisher: {
-          "@id": "https://alliance-jaitu-eight.vercel.app/#organization",
+          "@id": "https://www.aisjaito.com/#organization",
         },
       },
     ],
@@ -52,8 +53,8 @@ const Home = () => {
     <>
       <SEO
         title="Alliance International School Jaitu, Punjab | Admissions Open"
-        description={`Welcome to ${seoConfig.schoolName} in Jaitu, Faridkot, Punjab. We offer quality education from classes Pre-Nursery to VIII. Admissions are now open.`}
-        canonical="https://allianceinternationaljaitu.com/"
+        description="Welcome to Alliance International School in Jaitu (Jaito), Faridkot, Punjab. We offer quality education from classes Pre-Nursery to VIII. Admissions are now open."
+        canonical="https://www.aisjaito.com/"
       />
       <Helmet>
         <script type="application/ld+json">
