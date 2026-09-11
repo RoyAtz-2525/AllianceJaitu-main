@@ -1,5 +1,5 @@
 import { Quote, Award, Compass, Star } from "lucide-react";
-import principalPhoto from "../../assets/About/messages/principal.jpeg";
+import principalPhoto from "../../assets/About/messages/principal.png";
 import chairmanPhoto from "../../assets/About/messages/chairman.jpeg";
 import presidentPhoto from "../../assets/About/messages/president.jpeg";
 
@@ -89,7 +89,7 @@ const ManagementMessages = () => {
                   ? `${message.name}, ${message.role} at Alliance International School`
                   : `${message.role} at Alliance International School`
               }
-              className="relative aspect-[5/5] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              className="relative w-full h-auto object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
             />
 
             {/* Subtle Gradient Overlay */}
