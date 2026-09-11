@@ -1,7 +1,7 @@
 import { Quote, Award, Compass, Star } from "lucide-react";
-import principalPhoto from "../../assets/About/messages/principal.jpeg";
-import chairmanPhoto from "../../assets/About/messages/chairman.jpeg";
-import presidentPhoto from "../../assets/About/messages/president.jpeg";
+import principalPhoto from "../../assets/About/messages/principal.png";
+import chairmanPhoto from "../../assets/About/messages/chairman.png";
+import presidentPhoto from "../../assets/About/messages/president.png";
 
 const ManagementMessages = () => {
   const messages = [
@@ -81,7 +81,7 @@ const ManagementMessages = () => {
           <div className="absolute -left-4 -top-4 z-0 h-32 w-32 rounded-3xl bg-[#2859B8]/10" />
 
           {/* Main Image */}
-          <div className="group relative z-10 overflow-hidden rounded-[2rem] bg-slate-100 shadow-[0_20px_45px_rgba(23,37,84,0.12)]">
+          <div className="group relative z-10 overflow-hidden rounded-[2rem] bg-[#f2f2f2] shadow-[0_20px_45px_rgba(23,37,84,0.12)]">
             <img
               src={message.image}
               alt={
@@ -89,7 +89,7 @@ const ManagementMessages = () => {
                   ? `${message.name}, ${message.role} at Alliance International School`
                   : `${message.role} at Alliance International School`
               }
-              className="relative aspect-[5/5] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              className="relative w-full h-auto object-cover object-top pt-8 px-4 transition-transform duration-700 ease-out group-hover:scale-105"
             />
 
             {/* Subtle Gradient Overlay */}
