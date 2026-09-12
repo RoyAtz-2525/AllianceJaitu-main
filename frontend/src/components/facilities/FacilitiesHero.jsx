@@ -2,31 +2,42 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Monitor, Trophy, ShieldCheck } from "lucide-react";
 
+import hero1 from "../../assets/facilities/facility-hero/hero-1.jpg";
+import hero2 from "../../assets/facilities/facility-hero/hero-2.jpg";
+import hero3 from "../../assets/facilities/facility-hero/hero-3.jpg";
+import hero4 from "../../assets/facilities/facility-hero/hero-4.jpg";
+import hero5 from "../../assets/facilities/facility-hero/hero-5.jpg";
+import hero6 from "../../assets/facilities/facility-hero/hero-6.jpg";
+import hero7 from "../../assets/facilities/facility-hero/hero-7.jpg";
+
 const facilitySlides = [
   {
-    image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=2000&q=90",
-    alt: "Students learning in a classroom",
+    image: hero1,
+    alt: "Alliance School Facility 1",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=2000&q=90",
-    alt: "Modern smart classroom environment",
+    image: hero2,
+    alt: "Alliance School Facility 2",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2000&q=90",
-    alt: "School library with books and study area",
+    image: hero3,
+    alt: "Alliance School Facility 3",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2000&q=90",
-    alt: "Students learning coding and computers",
+    image: hero4,
+    alt: "Alliance School Facility 4",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2000&q=90",
-    alt: "Students participating in sports activities",
+    image: hero5,
+    alt: "Alliance School Facility 5",
+  },
+  {
+    image: hero6,
+    alt: "Alliance School Facility 6",
+  },
+  {
+    image: hero7,
+    alt: "Alliance School Facility 7",
   },
 ];
 
@@ -42,37 +53,33 @@ const FacilitiesHero = () => {
   }, []);
 
   return (
-    <div className="relative mt-0 min-h-screen overflow-hidden sm:min-h-[85vh]">
+    <div className="flex w-full flex-col">
       {/* =====================================================
-          HERO IMAGES
+          TOP SECTION (TEXT + BACKGROUND IMAGES)
       ===================================================== */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {facilitySlides.map((slide, index) => (
-          <div
-            key={slide.image}
-            className={`absolute inset-0 transition-opacity duration-[1000ms] ease-in-out ${
-              heroSlide === index ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            {/* IMAGE */}
-            <img
-              src={slide.image}
-              alt={slide.alt}
-              className="absolute inset-0 h-full w-full object-cover object-center"
-            />
+      <div className="relative mt-0 flex min-h-screen flex-col justify-center overflow-hidden sm:min-h-[85vh]">
+        
+        {/* HERO IMAGES */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          {facilitySlides.map((slide, index) => (
+            <div
+              key={slide.image}
+              className={`absolute inset-0 transition-opacity duration-[1000ms] ease-in-out ${
+                heroSlide === index ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.alt}
+                className="absolute inset-0 h-full w-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-black/60" />
+            </div>
+          ))}
+        </div>
 
-            {/* Dark overlay for contrast */}
-            <div className="absolute inset-0 bg-black/60" />
-          </div>
-        ))}
-      </div>
-
-      {/* =====================================================
-          HERO CONTENT
-      ===================================================== */}
-      <div className="relative z-10 flex h-full min-h-screen flex-col justify-between sm:min-h-[85vh]">
         {/* CENTERED TEXT */}
-        <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center px-6 pt-32 pb-16 text-center sm:px-10 lg:pt-40">
+        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center justify-center px-6 py-20 text-center sm:px-10 lg:py-32">
           <h1 className="mb-6 font-serif text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[56px] lg:leading-[1.1]">
             Good Education to Build <br className="hidden sm:block" /> A Better
             Future
@@ -85,53 +92,55 @@ const FacilitiesHero = () => {
 
           <Link
             to="/"
-            className="inline-block bg-[#F59A01] hover:bg-[#2859B8] text-white px-8 py-3 text-sm font-semibold transition-colors duration-300 sm:text-base rounded-sm"
+            className="inline-block rounded-sm bg-[#F59A01] px-8 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#2859B8] sm:text-base"
           >
             Take a Tour
           </Link>
         </div>
+      </div>
 
-        {/* THREE COLUMN BOTTOM BAR */}
-        <div className="w-full bg-[#2859B8]/90 backdrop-blur-md border-t border-white/20">
-          <div className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-white/20 md:grid-cols-3 md:divide-y-0 md:divide-x">
-            {/* Column 1 */}
-            <div className="flex flex-col items-center p-8 text-center sm:p-10">
-              <div className="mb-4 flex items-center justify-center text-[#F59A01]">
-                <Monitor size={32} strokeWidth={2} />
-              </div>
-              <h3 className="mb-2 text-lg font-bold tracking-wide text-white sm:text-xl">
-                40+ Classrooms & Labs
-              </h3>
-              <p className="max-w-[250px] text-xs leading-relaxed text-white/90 sm:text-sm">
-                Smart classrooms with interactive learning
-              </p>
+      {/* =====================================================
+          THREE COLUMN BOTTOM BAR (SEPARATE FROM HERO IMAGES)
+      ===================================================== */}
+      <div className="w-full bg-[#2859B8] border-t border-white/20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-white/20 md:grid-cols-3 md:divide-y-0 md:divide-x">
+          {/* Column 1 */}
+          <div className="flex flex-col items-center p-8 text-center sm:p-10">
+            <div className="mb-4 flex items-center justify-center text-[#F59A01]">
+              <Monitor size={32} strokeWidth={2} />
             </div>
+            <h3 className="mb-2 text-lg font-bold tracking-wide text-white sm:text-xl">
+              40+ Classrooms & Labs
+            </h3>
+            <p className="max-w-[250px] text-xs leading-relaxed text-white/90 sm:text-sm">
+              Smart classrooms with interactive learning
+            </p>
+          </div>
 
-            {/* Column 2 */}
-            <div className="flex flex-col items-center p-8 text-center sm:p-10">
-              <div className="mb-4 flex items-center justify-center text-[#F59A01]">
-                <Trophy size={32} strokeWidth={2} />
-              </div>
-              <h3 className="mb-2 text-lg font-bold tracking-wide text-white sm:text-xl">
-                15+ Sports Amenities
-              </h3>
-              <p className="max-w-[250px] text-xs leading-relaxed text-white/90 sm:text-sm">
-                Comprehensive sports & extracurricular infrastructure
-              </p>
+          {/* Column 2 */}
+          <div className="flex flex-col items-center p-8 text-center sm:p-10">
+            <div className="mb-4 flex items-center justify-center text-[#F59A01]">
+              <Trophy size={32} strokeWidth={2} />
             </div>
+            <h3 className="mb-2 text-lg font-bold tracking-wide text-white sm:text-xl">
+              15+ Sports Amenities
+            </h3>
+            <p className="max-w-[250px] text-xs leading-relaxed text-white/90 sm:text-sm">
+              Comprehensive sports & extracurricular infrastructure
+            </p>
+          </div>
 
-            {/* Column 3 */}
-            <div className="flex flex-col items-center p-8 text-center sm:p-10">
-              <div className="mb-4 flex items-center justify-center text-[#F59A01]">
-                <ShieldCheck size={32} strokeWidth={2} />
-              </div>
-              <h3 className="mb-2 text-lg font-bold tracking-wide text-white sm:text-xl">
-                24/7 Campus Security
-              </h3>
-              <p className="max-w-[250px] text-xs leading-relaxed text-white/90 sm:text-sm">
-                Advanced well-equipped labs & resource centers
-              </p>
+          {/* Column 3 */}
+          <div className="flex flex-col items-center p-8 text-center sm:p-10">
+            <div className="mb-4 flex items-center justify-center text-[#F59A01]">
+              <ShieldCheck size={32} strokeWidth={2} />
             </div>
+            <h3 className="mb-2 text-lg font-bold tracking-wide text-white sm:text-xl">
+              24/7 Campus Security
+            </h3>
+            <p className="max-w-[250px] text-xs leading-relaxed text-white/90 sm:text-sm">
+              Advanced well-equipped labs & resource centers
+            </p>
           </div>
         </div>
       </div>
