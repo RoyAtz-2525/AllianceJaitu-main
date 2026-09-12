@@ -22,6 +22,22 @@ const protect = async (req, res, next) => {
           .json({ message: "Not authorized, admin not found" });
       }
 
+      // Check for inactivity timeout (30 minutes)
+      const inactivityThreshold = 30 * 60 * 1000;
+      if (
+        req.admin.lastActivity &&
+        new Date() - req.admin.lastActivity > inactivityThreshold
+      ) {
+        return res
+          .status(401)
+          .json({ message: "Session expired due to inactivity" });
+      }
+
+      // Update last activity only if it's not an automated background request
+      if (req.headers["x-background-request"] !== "true") {
+        await Admin.updateOne({ _id: req.admin._id }, { lastActivity: new Date() });
+      }
+
       next();
     } catch (error) {
       console.error(error);
