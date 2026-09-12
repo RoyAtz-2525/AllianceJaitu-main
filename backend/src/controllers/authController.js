@@ -11,6 +11,9 @@ export const authAdmin = async (req, res) => {
     const admin = await Admin.findOne({ email });
 
     if (admin && (await admin.matchPassword(password))) {
+      admin.lastActivity = new Date();
+      await admin.save();
+
       res.json({
         admin: {
           _id: admin._id,
